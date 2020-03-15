@@ -10,6 +10,7 @@
           <e p="Readme.txt" t="Include" />
         </e>
         <e p="Scripts" t="Include">
+          <e p="InputMove.cs" t="Include" />
           <e p="PlayerController.cs" t="Include" />
         </e>
       </e>

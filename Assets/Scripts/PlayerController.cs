@@ -3,14 +3,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody2D))]
 public class PlayerController : MonoBehaviour
 {
-    
     private Animator _anim;
     public Animator Anim { get { return this._anim ? this._anim : this._anim = GetComponent<Animator> (); } }
     public Vector2 Direction { get; private set; }
-    
+ 
+    // Start is called before the first frame update
+    void Start () {
+ 
+    }
+ 
+    // Update is called once per frame
     void Update () {
         Vector2 inputAxis = new Vector2 ((int) Input.GetAxis ("Horizontal"), (int) Input.GetAxis ("Vertical"));
         if (inputAxis != Vector2.zero) Direction = inputAxis;
@@ -33,7 +37,7 @@ public class PlayerController : MonoBehaviour
  
     }
  
-    private Vector2 GetButtonDirection () {
+    Vector2 GetButtonDirection () {
         float x = (Input.GetKey (KeyCode.D)) ? 1.0f : (Input.GetKey (KeyCode.A)) ? -1.0f : 0.0f;
         float y = (Input.GetKey (KeyCode.W)) ? 1.0f : (Input.GetKey (KeyCode.S)) ? -1.0f : 0.0f;
         return new Vector2 (x, y);
